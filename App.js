@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-gesture-handler';
 import { useEffect, useState } from 'react';
-import { Button, Image, Linking, StyleSheet, Text, View } from 'react-native';
+import { Button, Dimensions, Image, Linking, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './components/Home';
@@ -31,6 +31,9 @@ export default function App() {
     })
   }, [])
 
+  const {height,width} = Dimensions.get('window')
+
+
 
 
 
@@ -51,7 +54,7 @@ export default function App() {
           </Stack.Navigator>
         </NavigationContainer>
       </ContextProvider.Provider> */}
-      <ContextProvider.Provider value={{ db, auth, setIssignedIn }}>
+      <ContextProvider.Provider value={{ db, auth, setIssignedIn, height, width }}>
         <NavigationContainer>
         {!isSignedIn ? <LoginSignup /> : <Home />}
       </NavigationContainer>

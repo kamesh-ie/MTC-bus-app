@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState } from 'react'
-import { Animated, Button, ImageBackground, StyleSheet, Switch, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Animated, Button, Dimensions, ImageBackground, StyleSheet, Switch, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import {auth} from '../context/Firebase'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { ContextProvider } from '../context/ContextProvider'
@@ -7,7 +7,7 @@ import { ContextProvider } from '../context/ContextProvider'
 const LoginSignup = () => {
     const {setIssignedIn} = useContext(ContextProvider);
 
-    const slideAnim = useRef(new Animated.Value(500)).current
+    const slideAnim = useRef(new Animated.Value(width)).current
     const [toggle, setToggle] = useState(false)
     const [l_username, set_L_Username] = useState('');
     const [s_username, set_S_Username] = useState('');
@@ -44,7 +44,7 @@ const LoginSignup = () => {
         }
         else {
             Animated.timing(slideAnim, {
-                toValue: 500,
+                toValue: width,
                 duration: 500,
                 useNativeDriver: false,
             }).start();
@@ -53,7 +53,7 @@ const LoginSignup = () => {
     }
     return (
         <View style={styles.container}>
-            <Text>
+            <Text style={{fontSize:20}}>
                 Login
                 <Switch
                     trackColor={{ false: "#767577", true: "#81b0ff" }}
@@ -68,7 +68,7 @@ const LoginSignup = () => {
                     styles.login,
                     { width: slideAnim, zIndex: 1 },
                 ]} >
-                    <ImageBackground blurRadius={10} style={{width:500}} resizeMode="cover" source={{ uri: 'https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60' }}>
+                    <ImageBackground blurRadius={10} style={{width:width}} resizeMode="cover" source={{ uri: 'https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60' }}>
                         <View style={styles.ls_form}>
                             <TextInput style={styles.ls_text} onChangeText={e => set_L_Username(e)} defaultValue={l_username} placeholder='Email' />
                             <TextInput style={styles.ls_text} defaultValue={l_password} onChangeText={e => set_L_Password(e)} secureTextEntry={true} placeholder='Password' />
@@ -96,12 +96,14 @@ const LoginSignup = () => {
     )
 }
 
-
+const {height,width} = Dimensions.get('window')
+console.log(height,width)
 const styles = StyleSheet.create({
     container: {
+        paddingTop:height/15,
         display: 'flex',
-        width: '100%',
-        height: '100%',
+        width: width,
+        height: height,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#bdc1bf',
@@ -113,25 +115,25 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderRadius: 8,
         borderWidth: 1,
-        width: 500,
-        height: 800,
+        width: width,
+        height: height,
     },
 
     login: {
         position: 'absolute',
-        height: 800,
+        height: height,
         overflow: 'hidden',
     },
 
     bar: {
         position: 'absolute',
-        height: '100%',
-        width: 10,
+        height:height,
+        width: width/60,
         backgroundColor: 'black',
         right: 0,
     },
     ls_form: {
-        width: 500,
+        width:width,
         paddingHorizontal: 20,
         height: '100%',
         display: 'flex',
@@ -143,7 +145,7 @@ const styles = StyleSheet.create({
         borderEndColor: 'black',
         fontSize: 25,
         borderBottomWidth: 1,
-        width: 300,
+        width: width/2,
         marginBottom: 25,
         borderBottomEndRadius: 8,
         paddingHorizontal: 10,
@@ -151,7 +153,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
     },
     ls_submit: {
-        width: 300,
+        width: width/2,
         alignItems: 'center',
         backgroundColor: 'black',
         paddingVertical: 5,
