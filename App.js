@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import 'react-native-gesture-handler';
 import { useEffect, useState } from 'react';
 import { Button, Dimensions, Image, Linking, StyleSheet, Text, View } from 'react-native';
