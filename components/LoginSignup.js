@@ -27,6 +27,7 @@ const LoginSignup = () => {
 
 
     const loginuser = () => {
+        setIssignedIn(true)
         console.log('error')
         signInWithEmailAndPassword(auth,l_username,l_password).then(() => {setIssignedIn(true)})
     }

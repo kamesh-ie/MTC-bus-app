@@ -11,11 +11,13 @@ import LoginSignup from './components/LoginSignup';
 import { db, auth } from './context/Firebase'
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { ContextProvider } from './context/ContextProvider';
+import {enableLatestRenderer} from 'react-native-maps';
 
 
 
 
 export default function App() {
+  enableLatestRenderer();
 
   const Stack = createNativeStackNavigator();
   const [isSignedIn, setIssignedIn] = useState(false)
