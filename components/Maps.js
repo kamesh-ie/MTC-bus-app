@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Text } from 'react-native'
-import MapView, { Polyline } from 'react-native-maps';
+import MapView, { Marker, Polyline } from 'react-native-maps';
 import MapViewDirections, { } from 'react-native-maps-directions'
 
 const Maps = () => {
@@ -19,19 +19,17 @@ const Maps = () => {
                         style={{ height: 1000, width: 1000, flex: 1 }}
                         onLayout={() => setShowMap(true)}
                         initialRegion={{
-                            latitude: 13.0067,
-                            longitude: 80.2206,
+                            latitude: 13.0198,
+                            longitude: 80.2236,
                             latitudeDelta: 0.0922,
                             longitudeDelta: 0.0421,
                         }}
                     >
                         <Polyline
                             coordinates={[
-                                { latitude: 37.8025259, longitude: -122.4351431 },
-                                { latitude: 37.7896386, longitude: -122.421646 },
-                                { latitude: 37.7665248, longitude: -122.4161628 },
-                                { latitude: 37.7734153, longitude: -122.4577787 },
-                                { latitude: 37.7948605, longitude: -122.4596065 }
+                                { latitude: 13.0067, longitude: 80.2206 },
+                                { latitude: 13.0198, longitude: 80.2236 },
+                                { latitude: 13.0298, longitude: 80.2006 }                                
                             ]}
                             strokeColor="#000" // fallback for when `strokeColors` is not supported by the map-provider
                             strokeColors={[
@@ -44,6 +42,12 @@ const Maps = () => {
                             ]}
                             strokeWidth={6}
                         />
+                        <Marker coordinate={{
+  latitude: 13.0298,
+  longitude: 80.2006,
+  latitudeDelta: 0.01,
+  longitudeDelta: 0.01,
+} } />
                         <MapViewDirections
                             origin={origin}
                             destination={destination}

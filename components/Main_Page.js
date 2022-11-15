@@ -4,6 +4,8 @@ import { Main_Page_context } from '../context/ContextProvider';
 import About from './About';
 import Info_page from './Info_page';
 import Maps from './Maps';
+import Payments from './Payments';
+import Pay_success from './Pay_success';
 import Search_places from './Search_places';
 
 const Main_Page = () => {
@@ -24,6 +26,8 @@ const Main_Page = () => {
             <Stack.Screen  name='Search_places' component={Search_places} />
             <Stack.Screen name='Info_page' component={Info_page} />
             <Stack.Screen name='maps' component={Maps} />
+            <Stack.Screen name='Payments' component={Payments} />
+            <Stack.Screen name='Pay_success' component={Pay_success} />
         </Stack.Navigator>
       </Main_Page_context.Provider>
     </>

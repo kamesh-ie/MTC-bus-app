@@ -26,7 +26,7 @@ const Info_page = ({ navigation }) => {
                         <View><Text style={[styles.textstyle]}><FontAwesomeIcon icon={faClock} />5mins</Text></View>
                         <View><Text style={[styles.textstyle]}>AVL30</Text></View>
                         <View><Text style={[styles.textstyle]}><TouchableOpacity onPress={() => navigation.navigate('maps')} style={styles.map_button}><FontAwesomeIcon size={30} icon={faMapLocationDot} /></TouchableOpacity></Text></View>
-                        <View><Text style={[styles.textstyle]}><TouchableOpacity style={styles}><FontAwesomeIcon size={30} icon={faTicket} /></TouchableOpacity></Text></View>
+                        <View><Text style={[styles.textstyle]}><TouchableOpacity onPress={() => navigation.navigate('Payments')} style={styles}><FontAwesomeIcon size={30} icon={faTicket} /></TouchableOpacity></Text></View>
                     </Text>
                 </View>
                 <View style={styles.bus_items}>
@@ -35,7 +35,7 @@ const Info_page = ({ navigation }) => {
                         <View><Text style={[styles.textstyle]}><FontAwesomeIcon icon={faClock} />5mins</Text></View>
                         <View><Text style={[styles.textstyle]}>AVL30</Text></View>
                         <View><Text style={[styles.textstyle]}><TouchableOpacity onPress={() => navigation.navigate('maps')} style={styles.map_button}><FontAwesomeIcon size={30} icon={faMapLocationDot} /></TouchableOpacity></Text></View>
-                        <View><Text style={[styles.textstyle]}><TouchableOpacity  style={styles}><FontAwesomeIcon size={30} icon={faTicket} /></TouchableOpacity></Text></View>
+                        <View><Text style={[styles.textstyle]}><TouchableOpacity onPress={() => navigation.navigate('Payments')}  style={styles}><FontAwesomeIcon size={30} icon={faTicket} /></TouchableOpacity></Text></View>
                     </Text>
                 </View>
                 <View style={styles.bus_items}>
@@ -44,7 +44,7 @@ const Info_page = ({ navigation }) => {
                         <View><Text style={[styles.textstyle]}><FontAwesomeIcon icon={faClock} />5mins</Text></View>
                         <View><Text style={[styles.textstyle]}>AVL30</Text></View>
                         <View><Text style={[styles.textstyle]}><TouchableOpacity onPress={() => navigation.navigate('maps')} style={styles.map_button}><FontAwesomeIcon size={30} icon={faMapLocationDot} /></TouchableOpacity></Text></View>
-                        <View><Text style={[styles.textstyle]}><TouchableOpacity  style={styles}><FontAwesomeIcon size={30} icon={faTicket} /></TouchableOpacity></Text></View>
+                        <View><Text style={[styles.textstyle]}><TouchableOpacity onPress={() => navigation.navigate('Payments')}  style={styles}><FontAwesomeIcon size={30} icon={faTicket} /></TouchableOpacity></Text></View>
                     </Text>
                 </View>
                 <Button title='back' onPress={() => navigation.goBack()} />

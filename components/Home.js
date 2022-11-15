@@ -8,12 +8,14 @@ import { ContextProvider } from '../context/ContextProvider';
 
 
 const Home = ({ navigation }) => {
-  const { auth } = useContext(ContextProvider)
+  const { auth,setIssignedIn } = useContext(ContextProvider)
   const Drawer = createDrawerNavigator();
   const Stack = createNativeStackNavigator();
 
   const Signout = () => {
     signOut(auth).then(() => setConfirm('Search_places'))
+    setIssignedIn(false)
+    
   }
 
   return (
