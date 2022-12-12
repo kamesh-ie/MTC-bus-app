@@ -6,8 +6,9 @@ import { getAuth } from 'firebase/auth'
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+const { REACT_APP_FIREBASE_APIKEY } = process.env
 const firebaseConfig = {
-  apiKey: "AIzaSyCA1jxFaa4Jw4DzBro5ICBSWHZtsRd-DjE",
+  apiKey: REACT_APP_FIREBASE_APIKEY,
   authDomain: "mtc-bus-app.firebaseapp.com",
   projectId: "mtc-bus-app",
   storageBucket: "mtc-bus-app.appspot.com",

@@ -21,6 +21,7 @@ web-build/
 
 # Xcode
 #
+.env
 build/
 *.pbxuser
 !default.pbxuser
